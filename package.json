@@ -1,0 +1,16 @@
+{
+  "name": "locmap-angular",
+  "version": "0.0.1",
+  "description": "Angular client for LocMap service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.4.7",
+    "angular-ui-router": "^0.2.15",
+    "materialize-css": "0.97.1"
+  }
+}
