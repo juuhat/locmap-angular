@@ -8,6 +8,7 @@ angular.module('locmap', ['ui.router', 'locmap.controllers', 'locmap.services'])
   .state('app', {
     abstract: true,
     templateUrl: 'templates/layout.html',
+    controller: 'AppCtrl'
   })
 
   .state('app.home', {

@@ -2,19 +2,19 @@
   <form ng-submit="signIn()">
     <div class="row">
       <div class="input-field col s12">
-        <input id="email" type="email" class="validate">
+        <input id="email" type="email" class="validate" ng-model="user.email">
         <label for="email">Email</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
-        <input id="password" type="password" class="validate">
+        <input id="password" type="password" class="validate" ng-model="user.password">
         <label for="password">Password</label>
       </div>
     </div>
 
-    <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Submit
+    <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Log In
       <i class="material-icons right">send</i>
     </button>
   </form>
