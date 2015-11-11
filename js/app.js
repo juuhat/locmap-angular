@@ -17,6 +17,24 @@ angular.module('locmap', ['ui.router', 'locmap.controllers', 'locmap.services'])
     controller: 'HomeCtrl'
   })
 
+  .state('app.locations', {
+    url: '/locations',
+    templateUrl: 'templates/locations.html',
+    controller: 'LocationsCtrl'
+  })
+
+  .state('app.location', {
+    url: '/locations/:id',
+    templateUrl: 'templates/location.html',
+    controller: 'LocationCtrl'
+  })
+
+  .state('app.new-location', {
+    url: '/new-location',
+    templateUrl: 'templates/new-location.html',
+    controller: 'NewLocationCtrl'
+  })
+
   .state('app.sign-in', {
     url: '/sign-in',
     templateUrl: 'templates/sign-in.html',

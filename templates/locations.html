@@ -1,0 +1,9 @@
+<h4>Locations</h4>
+<a href="#/new-location">New location</a>
+<div class="row section">
+  <ul class="collection">
+    <li class="collection-item" ng-repeat="location in locations">
+      <a ng-href="#/locations/{{location._id}}">{{location.title}}</a>
+    </li>
+  </ul>
+</div>
