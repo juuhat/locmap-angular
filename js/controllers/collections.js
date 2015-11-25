@@ -1,10 +1,10 @@
 angular.module('locmap.controllers')
 
-.controller('LocationsCtrl', function($scope, $state, ResourcesService, UserService) {
-  $scope.locations = [];
+.controller('CollectionsCtrl', function($scope, $state, ResourcesService, UserService) {
+  $scope.collections = [];
 
   ResourcesService.get('users/' + UserService.getId()).then(function(data) {
-    $scope.locations = data.locations;
+    $scope.collections = data.collections;
   }, function(err) {
     console.log(err);
   });

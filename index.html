@@ -8,7 +8,7 @@
   <link type="text/css" rel="stylesheet" href="/node_modules/materialize-css/bin/materialize.css" media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="css/style.css"/>
   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="node_modules/materialize-css/bin/materialize.js"></script>
+  <script src="lib/materialize.js"></script>
   <script src="node_modules/angular/angular.min.js"></script>
   <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js"></script>
@@ -22,10 +22,15 @@
   <script src="js/controllers/new-location.js"></script>
   <script src="js/controllers/location.js"></script>
   <script src="js/controllers/locations.js"></script>
+  <script src="js/controllers/collections.js"></script>
+  <script src="js/controllers/new-collection.js"></script>
 
   <script src="js/services/maps.js"></script>
   <script src="js/services/resources.js"></script>
   <script src="js/services/user.js"></script>
+
+  <script src="js/directives/init-select.js"></script>
+
 </head>
 <body ng-app="locmap">
   <div ui-view></div>

@@ -11,6 +11,11 @@ angular.module('locmap.services')
       return JSON.parse(localStorage.getItem('user'));
     },
 
+    getId: function() {
+      var user = this.get();
+      return user._id;
+    },
+
     getToken: function(url) {
       var user = this.get();
 

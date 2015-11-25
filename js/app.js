@@ -1,4 +1,4 @@
-angular.module('locmap', ['ui.router', 'locmap.controllers', 'locmap.services'])
+angular.module('locmap', ['ui.router', 'locmap.controllers', 'locmap.services', 'locmap.directives'])
 
 .constant('API_URL', 'http://localhost:4010/api/v1/')
 
@@ -35,6 +35,18 @@ angular.module('locmap', ['ui.router', 'locmap.controllers', 'locmap.services'])
     controller: 'NewLocationCtrl'
   })
 
+  .state('app.collections', {
+    url: '/collections',
+    templateUrl: 'templates/collections.html',
+    controller: 'CollectionsCtrl'
+  })
+
+  .state('app.new-collection', {
+    url: '/new-collection',
+    templateUrl: 'templates/new-collection.html',
+    controller: 'NewCollectionCtrl'
+  })
+
   .state('app.sign-in', {
     url: '/sign-in',
     templateUrl: 'templates/sign-in.html',
@@ -52,6 +64,9 @@ angular.module('locmap', ['ui.router', 'locmap.controllers', 'locmap.services'])
 
 // Init services module
 angular.module('locmap.services', []);
+
+// Init directives module
+angular.module('locmap.directives', []);
 
 // Init controllers module
 angular.module('locmap.controllers', ['locmap.services']);

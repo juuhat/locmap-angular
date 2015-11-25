@@ -1,0 +1,19 @@
+<div class="row section">
+  <div class="col s10">
+    <h4>Collections</h4>
+  </div>
+  <div class="col s2">
+    <a class="btn-floating right btn-large waves-effect waves-light green" href="#/new-collection"><i class="material-icons">add</i></a>
+  </div>
+</div>
+
+<div class="row section">
+  <ul class="collection">
+    <li class="collection-item" ng-repeat="collection in collections">
+      <a ng-href="#/collections/{{collection._id}}">{{collection.title}}</a>
+    </li>
+    <li class="collection-item" ng-if="collections.length >= 0">
+      You haven't created any collections!
+    </li>
+  </ul>
+</div>
