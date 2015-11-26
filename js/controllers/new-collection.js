@@ -20,6 +20,22 @@ angular.module('locmap.controllers')
 
   $scope.createCollection = function() {
     console.log($scope.collection.locations);
+
+    var collection = {
+      title: $scope.collection.title,
+      description: $scope.collection.description,
+      locations: []
+    }
+
+    $scope.collection.locations.forEach(function(e) {
+      collection.locations.push(e._id);
+    });
+
+    console.log(collection);
+
+    ResourcesService.create('collections', collection).then(function(data) {
+      console.log(data);
+    });
   }
 
 });

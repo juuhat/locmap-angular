@@ -12,7 +12,7 @@
     <li class="collection-item" ng-repeat="collection in collections">
       <a ng-href="#/collections/{{collection._id}}">{{collection.title}}</a>
     </li>
-    <li class="collection-item" ng-if="collections.length >= 0">
+    <li class="collection-item" ng-if="collections.length == 0">
       You haven't created any collections!
     </li>
   </ul>

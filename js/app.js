@@ -41,6 +41,12 @@ angular.module('locmap', ['ui.router', 'locmap.controllers', 'locmap.services', 
     controller: 'CollectionsCtrl'
   })
 
+  .state('app.collection', {
+    url: '/collections/:id',
+    templateUrl: 'templates/collection.html',
+    controller: 'CollectionCtrl'
+  })
+
   .state('app.new-collection', {
     url: '/new-collection',
     templateUrl: 'templates/new-collection.html',
