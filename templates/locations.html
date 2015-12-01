@@ -1,9 +1,21 @@
-<h4>Locations</h4>
-<a href="#/new-location">New location</a>
+<div class="row section">
+  <div class="col s10">
+    <h4>Locations</h4>
+  </div>
+  <div class="col s2">
+    <a class="btn-floating right btn-large waves-effect waves-light green" href="#/new-location"><i class="material-icons">add</i></a>
+  </div>
+</div>
+
 <div class="row section">
   <ul class="collection">
-    <li class="collection-item" ng-repeat="location in locations">
-      <a ng-href="#/locations/{{location._id}}">{{location.title}}</a>
+    <li class="collection-item row" ng-repeat="location in locations">
+      <div class="col s10">
+        <a ng-href="#/locations/{{location._id}}">{{location.title}}</a>
+      </div>
+      <div class="col s2">
+        <a class="btn-floating right waves-effect waves-light red"><i class="material-icons">delete</i></a>
+      </div>
     </li>
   </ul>
 </div>

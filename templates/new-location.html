@@ -1,1 +1,38 @@
 <h4>New location</h4>
+
+<div class="row section">
+<form ng-submit="createLocation()">
+  <div class="row">
+    <div class="input-field col s12">
+      <input name="title" id="title" type="text" required class="validate" ng-model="location.title">
+      <label for="title">Title</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input name="description" id="description" type="text" required class="validate" ng-model="location.description">
+      <label for="description">Description</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input name="latitude" id="latitude" type="number" step="any" required class="validate"ng-model="location.latitude" ng-change="locationChanged()">
+      <label class="active" for="latitude">Latitude</label>
+    </div>
+    <div class="input-field col s6">
+      <input name="longitude" id="longitude" type="number" step="any" required class="validate" ng-model="location.longitude" ng-change="locationChanged()">
+      <label class="active" for="longitude">Longitude</label>
+    </div>
+  </div>
+
+  <div class="section">
+    <div id="map" class="card"></div>
+  </div>
+
+  <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Save
+    <i class="material-icons right">send</i>
+  </button>
+</form>
+</div>
