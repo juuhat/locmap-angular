@@ -13,10 +13,27 @@ angular.module('locmap.services')
     },
 
     setCenter: function(lat, lng) {
+      if (map === undefined || map === null)
+        return;
+
       map.setCenter({lat: lat, lng: lng});
     },
 
+    fitBounds: function() {
+      if (map === undefined || map === null)
+        return;
+
+      var bounds = new google.maps.LatLngBounds();
+      markers.forEach(function(m) {
+        bounds.extend(m.getPosition());
+      });
+      map.fitBounds(bounds);
+    },
+
     addMarker: function(title, lat, lng) {
+      if (map === undefined || map === null)
+        return;
+
       var marker = new google.maps.Marker({
           position: {lat: lat, lng: lng},
           map: map,

@@ -30,6 +30,10 @@ angular.module('locmap.services')
 
     update: function(url, data) {
       return request('put', url, data);
+    },
+
+    delete: function(url) {
+      return request('delete', url, null);
     }
   }
 })

@@ -19,19 +19,22 @@ angular.module('locmap.controllers')
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
+      $scope.location.latitude = position.coords.latitude;
+      $scope.location.longitude = position.coords.longitude;
       MapsService.setCenter(position.coords.latitude, position.coords.longitude);
+      MapsService.addMarker($scope.location.title, position.coords.latitude, position.coords.longitude);
+      $scope.$apply();
     });
   }
 
-  $scope.locationChanged = function() {
+  $scope.locationCoordsChanged = function() {
     MapsService.removeMarkers();
-    console.log($scope.location);
     MapsService.addMarker($scope.location.title, $scope.location.latitude, $scope.location.longitude);
   }
 
   $scope.createLocation = function() {
     ResourcesService.create('locations', $scope.location).then(function(data) {
-      console.log(data);
+      $state.go('app.locations');
     });
   }
 
