@@ -1,19 +1,27 @@
-<div class="row section">
-  <div class="col s10">
-    <h4>Collections</h4>
+<div class="section">
+  <div class="row">
+    <div class="col s10 reset-padding">
+      <h4>Collections</h4>
+    </div>
+    <div class="col s2">
+      <a class="btn-floating right btn-large waves-effect waves-light green" href="#/new-collection"><i class="material-icons">add</i></a>
+    </div>
   </div>
-  <div class="col s2">
-    <a class="btn-floating right btn-large waves-effect waves-light green" href="#/new-collection"><i class="material-icons">add</i></a>
-  </div>
-</div>
 
-<div class="row section">
-  <ul class="collection">
-    <li class="collection-item" ng-repeat="collection in collections">
-      <a ng-href="#/collections/{{collection._id}}">{{collection.title}}</a>
-    </li>
-    <li class="collection-item" ng-if="collections.length == 0">
-      You haven't created any collections!
-    </li>
-  </ul>
+  <div class="row">
+    <ul class="collection">
+      <li class="collection-item row" ng-repeat="collection in collections">
+        <div class="col s9">
+          <a ng-href="#/collections/{{collection._id}}">{{collection.title}}</a>
+        </div>
+        <div class="col s3">
+          <a style="margin-left: 8px" class="btn-floating right waves-effect waves-light red" ng-click="deleteCollection(collection._id)"><i class="material-icons">delete</i></a>
+          <a class="btn-floating right waves-effect waves-light blue"><i class="material-icons">edit</i></a>
+        </div>
+      </li>
+      <li class="collection-item" ng-if="collections.length == 0">
+        You haven't created any collections!
+      </li>
+    </ul>
+  </div>
 </div>

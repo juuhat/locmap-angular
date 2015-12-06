@@ -8,4 +8,14 @@ angular.module('locmap.controllers')
   }, function(err) {
     console.log(err);
   });
+
+  $scope.deleteCollection = function(id) {
+    var r = confirm("Do you really want to delete this collection?");
+    if (r == true) {
+      ResourcesService.delete('/collections/' + id).then(function(data) {
+        Materialize.toast('Collection deleted!', 3000);
+        $state.go($state.current, {}, {reload: true});
+      });
+    }
+  }
 });

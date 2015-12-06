@@ -1,23 +1,25 @@
 <div class="section">
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title black-text">{{collection.title}}</span>
-      <p>{{collection.description}}</p>
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title black-text">{{collection.title}}</span>
+        <p>{{collection.description}}</p>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="section">
-  <ul class="collection card">
-    <li class="collection-item row" ng-repeat="location in collection.locations">
-        <a ng-href="#/locations/{{location._id}}">{{location.title}}</a>
-    </li>
-    <li class="collection-item" ng-if="collection.locations.length == 0">
-      This collections doesn't have any locations attached.
-    </li>
-  </ul>
-</div>
+  <div class="row">
+    <ul class="collection card">
+      <li class="collection-item row" ng-repeat="location in collection.locations">
+          <a ng-href="#/locations/{{location._id}}">{{location.title}}</a>
+      </li>
+      <li class="collection-item" ng-if="collection.locations.length == 0">
+        This collections doesn't have any locations attached.
+      </li>
+    </ul>
+  </div>
 
-<div class="section">
-  <div id="map" class="card"></div>
+  <div class="row">
+    <div id="map" class="card"></div>
+  </div>
 </div>

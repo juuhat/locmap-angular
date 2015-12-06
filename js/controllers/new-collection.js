@@ -34,7 +34,8 @@ angular.module('locmap.controllers')
     console.log(collection);
 
     ResourcesService.create('collections', collection).then(function(data) {
-      console.log(data);
+      Materialize.toast('Collection created!', 3000);
+      $state.go('app.collections');
     });
   }
 

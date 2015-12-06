@@ -34,6 +34,7 @@ angular.module('locmap.controllers')
 
   $scope.createLocation = function() {
     ResourcesService.create('locations', $scope.location).then(function(data) {
+      Materialize.toast('Location created!', 3000);
       $state.go('app.locations');
     });
   }
