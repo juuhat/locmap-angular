@@ -1,21 +1,21 @@
 <div class="section">
   <div class="row">
-    <h4>New location</h4>
+    <h4>{{title}}</h4>
   </div>
 
   <div class="row">
-    <form ng-submit="createLocation()">
+    <form ng-submit="submitLocation()">
       <div class="row">
         <div class="input-field col s12">
           <input name="title" id="title" type="text" required class="validate" ng-model="location.title">
-          <label for="title">Title</label>
+          <label ng-class="{active: location.title !== ''}" for="title">Title</label>
         </div>
       </div>
 
       <div class="row">
         <div class="input-field col s12">
           <input name="description" id="description" type="text" required class="validate" ng-model="location.description">
-          <label for="description">Description</label>
+          <label ng-class="{active: location.description !== ''}" for="description">Description</label>
         </div>
       </div>
 

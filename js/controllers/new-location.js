@@ -1,6 +1,8 @@
 angular.module('locmap.controllers')
 
 .controller('NewLocationCtrl', function($scope, $state, ResourcesService, MapsService) {
+  $scope.title = 'New location';
+
   $scope.location = {
     title: '',
     description: '',
@@ -32,11 +34,10 @@ angular.module('locmap.controllers')
     MapsService.addMarker($scope.location.title, $scope.location.latitude, $scope.location.longitude);
   }
 
-  $scope.createLocation = function() {
+  $scope.submitLocation = function() {
     ResourcesService.create('locations', $scope.location).then(function(data) {
       Materialize.toast('Location created!', 3000);
       $state.go('app.locations');
     });
   }
-
 });

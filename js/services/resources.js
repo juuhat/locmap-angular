@@ -13,6 +13,12 @@ angular.module('locmap.services')
     }).then(function(response) {
       defer.resolve(response.data);
     }, function(response) {
+      if (response.status === 401) {
+        Materialize.toast('Unauthorized', 3000);
+        $state.go('app.home');
+      }
+
+      $state.go('app.home');
       defer.reject();
     });
 

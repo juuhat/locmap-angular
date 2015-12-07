@@ -1,28 +1,29 @@
 <div class="section">
   <div class="row">
-    <h4>New collection</h4>
+    <h4>{{title}}</h4>
   </div>
 
   <div class="row">
-    <form ng-submit="createCollection()">
+    <form ng-submit="submitCollection()">
       <div class="row">
         <div class="input-field col s12">
           <input name="title" id="title" type="text" class="validate" ng-model="collection.title">
-          <label for="title">Title</label>
+          <label ng-class="{active: collection.title !== ''}" for="title">Title</label>
         </div>
       </div>
 
       <div class="row">
         <div class="input-field col s12">
           <input name="description" id="description" type="text" class="validate" ng-model="collection.description">
-          <label for="description">Description</label>
+          <label ng-class="{active: collection.description !== ''}" for="description">Description</label>
         </div>
       </div>
 
       <div class="row">
         <div class="input-field col s12">
-          <select multiple ng-multiple="true" ng-model="collection.locations" id="userSelect" ng-model="user.selected" ng-options="location.title for location in locations track by location._id">
+          <select multiple ng-multiple="true" ng-model="collection.locations">
             <option value="" disabled selected>Choose locations</option>
+            <option ng-repeat="location in locations" label={{location.title}} value="{{location._id}}">{{location.title}}</option>
           </select>
           <label>Locations</label>
         </div>

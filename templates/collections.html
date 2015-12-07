@@ -16,7 +16,7 @@
         </div>
         <div class="col s3">
           <a style="margin-left: 8px" class="btn-floating right waves-effect waves-light red" ng-click="deleteCollection(collection._id)"><i class="material-icons">delete</i></a>
-          <a class="btn-floating right waves-effect waves-light blue"><i class="material-icons">edit</i></a>
+          <a href="#/edit-collection/{{collection._id}}" class="btn-floating right waves-effect waves-light blue"><i class="material-icons">edit</i></a>
         </div>
       </li>
       <li class="collection-item" ng-if="collections.length == 0">

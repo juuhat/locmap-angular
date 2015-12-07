@@ -31,8 +31,14 @@ angular.module('locmap', ['ui.router', 'locmap.controllers', 'locmap.services', 
 
   .state('app.new-location', {
     url: '/new-location',
-    templateUrl: 'templates/new-location.html',
+    templateUrl: 'templates/location-form.html',
     controller: 'NewLocationCtrl'
+  })
+
+  .state('app.edit-location', {
+    url: '/edit-location/:id',
+    templateUrl: 'templates/location-form.html',
+    controller: 'EditLocationCtrl'
   })
 
   .state('app.collections', {
@@ -49,8 +55,14 @@ angular.module('locmap', ['ui.router', 'locmap.controllers', 'locmap.services', 
 
   .state('app.new-collection', {
     url: '/new-collection',
-    templateUrl: 'templates/new-collection.html',
+    templateUrl: 'templates/collection-form.html',
     controller: 'NewCollectionCtrl'
+  })
+
+  .state('app.edit-collection', {
+    url: '/edit-collection/:id',
+    templateUrl: 'templates/collection-form.html',
+    controller: 'EditCollectionCtrl'
   })
 
   .state('app.sign-in', {
