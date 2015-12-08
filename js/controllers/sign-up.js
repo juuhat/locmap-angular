@@ -20,7 +20,8 @@ angular.module('locmap.controllers')
       url: API_URL + 'auth/register',
       data: data
     }).then(function successCallback(response) {
-      console.log(response);
+      Materialize.toast('Account created!', 3000);
+      $state.go('app.sign-in');
     }, function errorCallback(response) {
       console.log(response);
     });
